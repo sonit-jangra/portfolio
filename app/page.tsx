@@ -11,12 +11,12 @@ const skills = [
   {
     number: "02",
     title: "Python",
-    description: "Programming & Automation",
+    description: "Programming",
   },
   {
     number: "03",
     title: "Ethical Hacking",
-    description: "Web Security & Pentesting",
+    description: "Pentesting",
   },
   {
     number: "04",
@@ -25,21 +25,6 @@ const skills = [
   },
   {
     number: "05",
-    title: "Flask",
-    description: "Backend Development",
-  },
-  {
-    number: "06",
-    title: "Next.js",
-    description: "Modern Web Development",
-  },
-  {
-    number: "07",
-    title: "Git & GitHub",
-    description: "Version Control",
-  },
-  {
-    number: "08",
     title: "Web Security",
     description: "Vulnerability Assessment",
   },
@@ -64,15 +49,7 @@ const projects = [
     tags: ["Next.js", "JavaScript", "RSS"],
     link: "https://github.com/sonit-jangra/Cybersecurity-News",
   },
-  {
-    number: "03",
-    category: "AI + SECURITY",
-    title: "AI Phishing Detector",
-    description:
-      "A Python and Flask application designed to analyze email content and identify potential phishing messages using machine learning.",
-    tags: ["Python", "Flask", "Machine Learning"],
-    link: "#",
-  },
+  
 ];
 
 export default function Home() {
@@ -87,9 +64,7 @@ export default function Home() {
         <div className="nav-container">
 
           <a href="#home" className="logo">
-            <span>&lt;</span>
             SONIT
-            <span>/&gt;</span>
           </a>
 
           <button
@@ -169,8 +144,7 @@ export default function Home() {
 
             <p className="hero-description">
               I build security-focused applications and explore
-              cybersecurity, ethical hacking, web security,
-              Python and modern web development.
+              cybersecurity, ethical hacking.
             </p>
 
             <div className="hero-actions">
@@ -285,9 +259,7 @@ export default function Home() {
 
             <p>
               My current learning path focuses on cybersecurity,
-              ethical hacking, Python, Kali Linux, web
-              vulnerability assessment and modern web
-              development.
+              ethical hacking, Python and Kali Linux.
             </p>
 
           </div>
@@ -304,15 +276,10 @@ export default function Home() {
               <span>INTEREST</span>
               <strong>ETHICAL HACKING</strong>
             </div>
-
-            <div className="info-card">
-              <span>BUILDING WITH</span>
-              <strong>PYTHON + NEXT.JS</strong>
-            </div>
-
             <div className="info-card">
               <span>LOCATION</span>
               <strong>INDIA</strong>
+              <strong>HARYANA</strong>
             </div>
 
           </div>
@@ -452,7 +419,7 @@ export default function Home() {
 
             <p>
               Developing practical knowledge in cybersecurity,
-              ethical hacking, Linux, Python, web security and
+              ethical hacking, Linux, Python and
               vulnerability assessment.
             </p>
 

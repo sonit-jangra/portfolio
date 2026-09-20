@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Sonit Jangra | Cybersecurity Portfolio",
   description:
-    "Cybersecurity enthusiast and developer portfolio of Sonit Jangra.",
+    "Cybersecurity enthusiast portfolio of Sonit Jangra.",
 };
 
 export default function RootLayout({
