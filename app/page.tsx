@@ -8,11 +8,7 @@ const skills = [
     title: "Cybersecurity",
     description: "Security & Threat Analysis",
   },
-  {
-    number: "02",
-    title: "Python",
-    description: "Programming",
-  },
+  
   {
     number: "03",
     title: "Ethical Hacking",
@@ -31,17 +27,9 @@ const skills = [
 ];
 
 const projects = [
+
   {
     number: "01",
-    category: "CYBERSECURITY",
-    title: "Web Vulnerability Scanner",
-    description:
-      "A Flask-based web security assessment tool that checks websites for common security configuration issues, HTTPS status and security headers.",
-    tags: ["Python", "Flask", "Web Security"],
-    link: "https://github.com/sonit-jangra/Web-Vulnerability-Finder",
-  },
-  {
-    number: "02",
     category: "SECURITY NEWS",
     title: "CyberPulse",
     description:
@@ -138,8 +126,7 @@ export default function Home() {
 
             <h2>
               Cybersecurity Enthusiast
-              <b> & </b>
-              Developer
+              
             </h2>
 
             <p className="hero-description">
