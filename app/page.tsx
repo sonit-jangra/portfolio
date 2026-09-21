@@ -193,21 +193,26 @@ export default function Home() {
               
 
               <span className="terminal-online">
-                ● ONLINE
+                
               </span>
 
             </div>
 
+            <div className="terminal-body">
 
 
-          </div> 
+
+            </div>
+
+          </div>
 
         </div>
-
       </section>
 
-
       {/* ================= ABOUT ================= */}
+
+
+      
 
       <section className="dashboard-section" id="about">
 
@@ -237,12 +242,7 @@ export default function Home() {
               Python, Linux.
             </p>
 
-            <p>
-              I enjoy creating practical projects that solve
-              real problems and help me understand how
-              applications can be protected against security
-              threats.
-            </p>
+            
 
             <p>
               My current learning path focuses on cybersecurity,

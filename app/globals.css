@@ -166,7 +166,7 @@ button {
   font-weight: 700;
   letter-spacing: 1.3px;
   margin-bottom: 28px;
-  background: rgba(12, 17, 27, 0.7);
+  background: rgba(37, 45, 58, 0.7);
 }
 
 .online-status span {
@@ -278,93 +278,7 @@ button {
 
 /* ================= TERMINAL ================= */
 
-.terminal-card {
-  border: 1px solid #283446;
-  border-radius: 12px;
-  background: #0d121b;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
-  overflow: hidden;
-  transform: rotate(1deg);
-}
 
-.terminal-header {
-  height: 48px;
-  padding: 0 18px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  border-bottom: 1px solid #202b3a;
-  color: #788497;
-  font-family: "Space Mono", monospace;
-  font-size: 11px;
-}
-
-.terminal-header > span:last-child {
-  margin-left: auto;
-  color: #f52d00;
-}
-
-.terminal-dots {
-  display: flex;
-  gap: 6px;
-}
-
-.terminal-dots i {
-  width: 8px;
-  height: 8px;
-  display: block;
-  border-radius: 50%;
-  background: #3d4756;
-}
-
-.terminal-body {
-  padding: 30px;
-  min-height: 390px;
-  font-family: "Space Mono", monospace;
-  font-size: 13px;
-  line-height: 2;
-}
-
-.terminal-body p {
-  color: #9aa5b5;
-}
-
-.terminal-body p b {
-  color: #e3e8ef;
-}
-
-.terminal-green {
-  color: #fa0000 !important;
-  margin-bottom: 12px;
-}
-
-.cursor-line {
-  animation: blink 1s infinite;
-  color: #fe0303 !important;
-}
-
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-
-.scroll {
-  position: absolute;
-  bottom: 25px;
-  left: 7%;
-  color: #566274;
-  font-family: "Space Mono", monospace;
-  font-size: 9px;
-  letter-spacing: 2px;
-}
-
-.scroll span {
-  color: #00f5a0;
-  display: block;
-  margin-top: 7px;
-  font-size: 16px;
-}
 
 /* ================= SECTIONS ================= */
 
