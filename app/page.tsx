@@ -1,509 +1,242 @@
-"use client";
-
-import { useState } from "react";
-
-const skills = [
-  {
-    number: "01",
-    title: "Cybersecurity",
-    description: "Security & Threat Analysis",
-  },
-  
-  {
-    number: "03",
-    title: "Ethical Hacking",
-    description: "Pentesting",
-  },
-  {
-    number: "04",
-    title: "Kali Linux",
-    description: "Security Tools",
-  },
-  {
-    number: "05",
-    title: "Web Security",
-    description: "Vulnerability Assessment",
-  },
-];
-
 const projects = [
-
   {
     number: "01",
-    category: "SECURITY NEWS",
-    title: "CyberPulse",
+    name: "Web Vulnerability Finder",
+    type: "Web application security",
     description:
-      "A cybersecurity news dashboard that collects and displays cybersecurity-focused news using live RSS feeds.",
-    tags: ["Next.js", "JavaScript", "RSS"],
-    link: "https://github.com/sonit-jangra/Cybersecurity-News",
+      "A cybersecurity project focused on finding common web application vulnerabilities and making findings easier to review.",
+    tags: ["WEB SECURITY", "ETHICAL HACKING"],
+    className: "art-recon",
+    visual: (
+      <div className="terminal-card">
+        <div className="terminal-top"><span /><span /><span /><b>vulnerability-finder</b></div>
+        <p className="terminal-comment"># web security project</p>
+        <p><i>$</i> scan --target authorized-lab</p>
+        <span className="terminal-result"><b>01</b> target in scope</span>
+        <span className="terminal-result"><b>02</b> review findings</span>
+        <span className="terminal-result"><b>OK</b> report ready</span>
+        <p className="terminal-prompt"><i>$</i> <span /></p>
+      </div>
+    ),
   },
-  
+  {
+    number: "02",
+    name: "Cybersecurity News",
+    type: "Keeping up with security",
+    description:
+      "A project for collecting and exploring cybersecurity news, making it easier to follow security stories and emerging topics.",
+    tags: ["CYBERSECURITY", "NEWS"],
+    className: "art-logwatch",
+    visual: (
+      <div className="news-card">
+        <div className="news-card-top"><span>SECURITY BRIEF</span><span className="live-indicator">● NEWS DESK</span></div>
+        <p className="news-date">THE LATEST IN CYBERSECURITY</p>
+        <article className="news-story">
+          <span className="news-category">THREAT INTELLIGENCE</span>
+          <b>Understanding the<br />evolving threat landscape</b>
+          <span className="news-meta">5 MIN READ <i>↗</i></span>
+        </article>
+        <article className="news-story news-story-secondary">
+          <span className="news-category">CLOUD SECURITY</span>
+          <b>Security notes from<br />across the cloud</b>
+          <span className="news-meta">3 MIN READ <i>↗</i></span>
+        </article>
+      </div>
+    ),
+  },
 ];
+
+function ArrowIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 20 20" fill="none">
+      <path
+        d="M4.5 15.5 15 5m0 0H6m9 0v9"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
+    </svg>
+  );
+}
+
+function ShieldIcon() {
+  return (
+    <svg aria-hidden="true" className="shield-icon" viewBox="0 0 48 54" fill="none">
+      <path d="M24 3 43 10v13c0 12.1-7.5 22.8-19 28C12.5 45.8 5 35.1 5 23V10L24 3Z" />
+      <path d="m16 26 5.5 5.5L33 20" />
+    </svg>
+  );
+}
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
-    <div className="website">
-
-      {/* ================= NAVBAR ================= */}
-
-      <header className="navbar">
-        <div className="nav-container">
-
-          <a href="#home" className="logo">
-            SONIT
-          </a>
-
-          <button
-            className="menu-button"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Open menu"
-          >
-            ☰
-          </button>
-
-          <nav className={`nav-links ${menuOpen ? "show" : ""}`}>
-
-            <a href="#home" onClick={() => setMenuOpen(false)}>
-              Home
-            </a>
-
-            <a href="#about" onClick={() => setMenuOpen(false)}>
-              About
-            </a>
-
-            <a href="#skills" onClick={() => setMenuOpen(false)}>
-              Skills
-            </a>
-
-            <a href="#projects" onClick={() => setMenuOpen(false)}>
-              Projects
-            </a>
-
-            <a href="#education" onClick={() => setMenuOpen(false)}>
-              Education
-            </a>
-
-            <a href="#contact" onClick={() => setMenuOpen(false)}>
-              Contact
-            </a>
-
-            <a href="/CV.pdf" download className="nav-cv">
-              DOWNLOAD CV
-            </a>
-
-          </nav>
-
-        </div>
+    <main>
+      <header className="site-header">
+        <a aria-label="Sonit, home" className="wordmark" href="#home">sonit<span>_</span></a>
+        <nav aria-label="Main navigation" className="main-nav">
+          <a href="#skills">Skills</a>
+          <a href="#work">Projects</a>
+          <a href="#about">About</a>
+          <a className="nav-contact" href="#contact">Let&apos;s connect <ArrowIcon /></a>
+        </nav>
       </header>
 
-
-      {/* ================= HERO ================= */}
-
-      <section className="hero" id="home">
-
-        <div className="hero-grid"></div>
-
-        <div className="hero-container">
-
-          <div className="hero-left">
-
-            <div className="online-status">
-              <span></span>
-              AVAILABLE FOR OPPORTUNITIES
-            </div>
-
-            <p className="hero-label">
-              CYBERSECURITY PORTFOLIO
-            </p>
-
-            <h1>
-              SONIT
-              <br />
-              <span>JANGRA</span>
-            </h1>
-
-            <h2>
-              Cybersecurity Enthusiast
-              
-            </h2>
-
-            <p className="hero-description">
-              I build security-focused applications and explore
-              cybersecurity, ethical hacking.
-            </p>
-
-            <div className="hero-actions">
-
-              <a href="#projects" className="primary-button">
-                VIEW PROJECTS
-                <span>→</span>
-              </a>
-
-              <a
-                href="/CV.pdf"
-                download
-                className="outline-button"
-              >
-                DOWNLOAD CV
-              </a>
-
-            </div>
-
-            <div className="social-row">
-
-              <a
-                href="https://github.com/sonit-jangra"
-                target="_blank"
-                rel="noreferrer"
-              >
-                GITHUB ↗
-              </a>
-
-              <a
-                href="https://www.linkedin.com/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LINKEDIN ↗
-              </a>
-
-              <a href="mailto:sonitsilk001@gmail.com">
-                EMAIL ↗
-              </a>
-
-            </div>
-
+      <section aria-labelledby="hero-title" className="hero section-wrap" id="home">
+        <div className="hero-copy">
+          <p className="eyebrow"><span className="availability-dot" /> CYBERSECURITY ENTHUSIAST · ALWAYS LEARNING</p>
+          <h1 id="hero-title">
+            Hi, I&apos;m Sonit.
+            <br />
+            I look a little
+            <br />
+            <span className="accent-line">closer.</span>
+          </h1>
+          <p className="hero-intro">
+            Curious about how systems break, how we protect them, and how
+            security can make the internet a safer place for everyone.
+          </p>
+          <div className="hero-actions">
+            <a className="button button-primary" href="#work">Explore my labs <span className="button-arrow">↓</span></a>
+            <a className="text-link" href="#about">Get to know me <span>↗</span></a>
           </div>
-
-
-          {/* TERMINAL */}
-
-          <div className="terminal-card">
-
-            <div className="terminal-header">
-
-              <div className="terminal-dots">
-                <i></i>
-                <i></i>
-                <i></i>
-              </div>
-
-              
-
-              <span className="terminal-online">
-                
-              </span>
-
-            </div>
-
-            <div className="terminal-body">
-
-
-
-            </div>
-
+          <div className="hero-focus">
+            <span>FOCUS AREAS</span>
+            <b>Ethical hacking</b><i /> <b>Web security</b><i /> <b>Cloud security</b>
           </div>
-
         </div>
+
+        <div aria-label="A security monitoring dashboard showing a protected system" className="hero-art" role="img">
+          <div className="dashboard">
+            <div className="dashboard-top">
+              <a className="dashboard-brand"><ShieldIcon /><span>NODE<span className="dashboard-brand-accent">/</span>SEC</span></a>
+              <span className="dashboard-status"><i /> ALL SYSTEMS NOMINAL</span>
+              <span className="dashboard-menu">•••</span>
+            </div>
+            <div className="dashboard-body">
+              <p className="dashboard-label">SECURITY OVERVIEW <span>LIVE VIEW</span></p>
+              <div className="dashboard-shield"><ShieldIcon /><span>✓</span></div>
+              <p className="dashboard-title">Looking good.</p>
+              <p className="dashboard-subtitle">Your sample environment is being monitored.</p>
+              <div className="dashboard-metrics">
+                <div><span>THREATS FOUND</span><b>00</b></div>
+                <div><span>CHECKS PASSED</span><b>12<span>/12</span></b></div>
+              </div>
+              <div className="dashboard-activity">
+                <span className="activity-dot" />
+                <span>Last check <b>just now</b></span>
+                <span className="activity-bar"><i /></span>
+                <b className="activity-good">CLEAR</b>
+              </div>
+            </div>
+          </div>
+          <span className="hero-art-caption"><span className="availability-dot" /> LEARN · TEST · DOCUMENT</span>
+          <span className="hero-art-index">FIG. 001 / DEFENSE IN DEPTH</span>
+        </div>
+
+        <a aria-label="Scroll to skills" className="scroll-cue" href="#skills"><span /> SCROLL TO EXPLORE</a>
       </section>
 
-      {/* ================= ABOUT ================= */}
-
-
-      
-
-      <section className="dashboard-section" id="about">
-
-        <div className="section-title">
-          <span>01 /</span>
-          <h2>ABOUT ME</h2>
-        </div>
-
-        <div className="about-layout">
-
-          <div className="large-card about-main">
-
-            <div className="card-top">
-              <span>PROFILE</span>
-              <span>01</span>
-            </div>
-
-            <h3>
-              Building security.
-              <br />
-              Learning continuously.
-            </h3>
-
-            <p>
-              I am a cybersecurity enthusiast and developer
-              interested in ethical hacking, web security,
-              Python, Linux.
-            </p>
-
-            
-
-            <p>
-              My current learning path focuses on cybersecurity,
-              ethical hacking, Python and Kali Linux.
-            </p>
-
+      <section aria-labelledby="skills-title" className="skills-section section-wrap" id="skills">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">TOOLS I USE · SKILLS I KEEP BUILDING</p>
+            <h2 id="skills-title">My security <span className="accent-line">toolkit.</span></h2>
           </div>
-
-
-          <div className="side-cards">
-
-            <div className="info-card">
-              <span>FOCUS</span>
-              <strong>CYBERSECURITY</strong>
-            </div>
-
-            <div className="info-card">
-              <span>INTEREST</span>
-              <strong>ETHICAL HACKING</strong>
-            </div>
-            <div className="info-card">
-              <span>LOCATION</span>
-              <strong>INDIA</strong>
-              <strong>HARYANA</strong>
-            </div>
-
-          </div>
-
+          <p className="heading-note">Curiosity backed by practical<br />tools and continuous learning.</p>
         </div>
-
+        <ul className="skills-grid">
+          <li className="skill-card"><span className="skill-index">01</span><span className="skill-symbol">$_</span><span className="skill-name">Linux</span><span className="skill-kind">OPERATING SYSTEM</span></li>
+          <li className="skill-card"><span className="skill-index">02</span><span className="skill-symbol">Py</span><span className="skill-name">Python</span><span className="skill-kind">PROGRAMMING</span></li>
+          <li className="skill-card"><span className="skill-index">03</span><span className="skill-symbol">⌕</span><span className="skill-name">Burp Suite</span><span className="skill-kind">WEB SECURITY</span></li>
+          <li className="skill-card"><span className="skill-index">04</span><span className="skill-symbol">≋</span><span className="skill-name">Wireshark</span><span className="skill-kind">NETWORK ANALYSIS</span></li>
+          <li className="skill-card"><span className="skill-index">05</span><span className="skill-symbol">⌘</span><span className="skill-name">Ethical Hacking</span><span className="skill-kind">SECURITY PRACTICE</span></li>
+          <li className="skill-card"><span className="skill-index">06</span><span className="skill-symbol">☁</span><span className="skill-name">Cloud Security</span><span className="skill-kind">CLOUD</span></li>
+        </ul>
       </section>
 
-
-      {/* ================= SKILLS ================= */}
-
-      <section className="dashboard-section" id="skills">
-
-        <div className="section-title">
-          <span>02 /</span>
-          <h2>TECHNICAL SKILLS</h2>
+      <section aria-labelledby="work-title" className="work-section section-wrap" id="work">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">PROJECTS · BUILDING THROUGH PRACTICE</p>
+            <h2 id="work-title">Selected <span className="accent-line">projects.</span></h2>
+          </div>
+          <p className="heading-note">Cybersecurity tools and ideas,<br />made for a safer internet.</p>
         </div>
 
-        <div className="skills-grid">
-
-          {skills.map((skill) => (
-            <div className="skill-card" key={skill.number}>
-
-              <div className="skill-number">
-                {skill.number}
-              </div>
-
-              <div className="skill-content">
-                <h3>{skill.title}</h3>
-                <p>{skill.description}</p>
-              </div>
-
-              <div className="skill-arrow">
-                →
-              </div>
-
-            </div>
-          ))}
-
-        </div>
-
-      </section>
-
-
-      {/* ================= PROJECTS ================= */}
-
-      <section className="dashboard-section" id="projects">
-
-        <div className="section-title">
-          <span>03 /</span>
-          <h2>FEATURED PROJECTS</h2>
-        </div>
-
-        <div className="projects-grid">
-
+        <div className="project-grid">
           {projects.map((project) => (
-            <article
-              className="project-card"
-              key={project.number}
-            >
-
-              <div className="project-top">
-
-                <span className="project-number">
-                  {project.number}
-                </span>
-
-                <span className="project-category">
-                  {project.category}
-                </span>
-
+            <article className="project-card" key={project.number}>
+              <div className={`project-art ${project.className}`}>
+                <span className="project-number">PROJECT / {project.number}</span>
+                {project.visual}
               </div>
-
-              <div className="project-icon">
-                {"</>"}
+              <div className="project-info">
+                <div>
+                  <p className="project-type">{project.type}</p>
+                  <h3>{project.name}</h3>
+                </div>
+                <div aria-label="Project disciplines" className="project-tags">
+                  {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                </div>
+                <p className="project-description">{project.description}</p>
               </div>
-
-              <h3>
-                {project.title}
-              </h3>
-
-              <p>
-                {project.description}
-              </p>
-
-              <div className="tags">
-
-                {project.tags.map((tag) => (
-                  <span key={tag}>
-                    {tag}
-                  </span>
-                ))}
-
-              </div>
-
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noreferrer"
-                className="project-link"
-              >
-                VIEW PROJECT
-                <span>↗</span>
-              </a>
-
             </article>
           ))}
-
         </div>
-
+        <p className="concept-note">I only test systems I own or have explicit permission to assess.</p>
       </section>
 
-
-      {/* ================= EDUCATION ================= */}
-
-      <section
-        className="dashboard-section"
-        id="education"
-      >
-
-        <div className="section-title">
-          <span>04 /</span>
-          <h2>EDUCATION & LEARNING</h2>
-        </div>
-
-        <div className="education-card">
-
-          <div className="education-main">
-
-            <span className="education-label">
-              CURRENT LEARNING PATH
-            </span>
-
-            <h3>
-              Cybersecurity
-            </h3>
-
+      <section aria-labelledby="about-title" className="about-section" id="about">
+        <div className="about-inner section-wrap">
+          <div className="about-stamp" aria-label="Think ethically. Test with permission.">
+            <span>THINK ETHICALLY</span>
+            <span className="stamp-shield"><ShieldIcon /></span>
+            <span>TEST WITH PERMISSION</span>
+          </div>
+          <div className="about-copy">
+            <p className="eyebrow">A LITTLE ABOUT ME</p>
+            <h2 id="about-title">Curiosity, with<br /><span className="accent-line">a purpose.</span></h2>
             <p>
-              Developing practical knowledge in cybersecurity,
-              ethical hacking, Linux, Python and
-              vulnerability assessment.
+              I&apos;m Sonit, a cybersecurity enthusiast building my skills one
+              careful experiment at a time. I enjoy understanding how web
+              technologies work and spotting ways they can be made safer.
             </p>
-
-          </div>
-
-          <div className="learning-list">
-
-            <div className="learning-item">
-              <span>01</span>
-              <strong>Cybersecurity</strong>
-            </div>
-
-            <div className="learning-item">
-              <span>02</span>
-              <strong>Ethical Hacking</strong>
-            </div>
-
-            <div className="learning-item">
-              <span>03</span>
-              <strong>Kali Linux</strong>
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      {/* ================= CONTACT ================= */}
-
-      <section
-        className="dashboard-section contact-section"
-        id="contact"
-      >
-
-        <div className="section-title">
-          <span>05 /</span>
-          <h2>CONTACT</h2>
-        </div>
-
-        <div className="contact-card">
-
-          <div>
-
-            <span className="contact-label">
-              LET&apos;S CONNECT
-            </span>
-
-            <h3>
-              Have a project
-              <br />
-              in mind?
-            </h3>
-
             <p>
-              I am interested in cybersecurity projects,
-              collaborations, internships and opportunities
-              where I can learn and contribute.
+              My approach is grounded in curiosity, clear documentation, and
+              respect for the people behind the systems. I practice in legal,
+              controlled environments and keep learning every day.
             </p>
-
+            <a className="text-link about-link" href="#contact">Let&apos;s talk security <span>↗</span></a>
           </div>
-
-          <div className="contact-links">
-
-            <a href="mailto:sonitjangra001@gmail.com">
-              <span>EMAIL</span>
-              sonitjangra001@gmail.com
-              <b>↗</b>
-            </a>
-
-            <a
-              href="https://github.com/sonit-jangra"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span>GITHUB</span>
-              github.com/sonit-jangra
-              <b>↗</b>
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/sonit-jangra-323a2b419/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B8Vui7tsRS2Wr5k8u%2ByhDTA%3D%3D"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span>LINKEDIN</span>
-              LinkedIn Profile
-              <b>↗</b>
-            </a>
-
-          </div>
-
         </div>
-
       </section>
 
-    </div>
+      <section aria-labelledby="contact-title" className="contact-section section-wrap" id="contact">
+        <div>
+          <p className="eyebrow">COLLABORATION, QUESTIONS, GOOD CONVERSATIONS</p>
+          <h2 id="contact-title">Let&apos;s build<br /><span className="accent-line">safer systems.</span></h2>
+        </div>
+        <div className="contact-aside">
+          <p>Have a cybersecurity opportunity, a project idea, or something interesting to share? I&apos;d love to connect.</p>
+          <a className="button button-primary" href="https://linkedin.com/in/sonit-jangra-323a2b419/" rel="noreferrer" target="_blank">Connect on LinkedIn <ArrowIcon /></a>
+          <div aria-label="Social profiles" className="social-links">
+            <a href="https://linkedin.com/in/sonit-jangra-323a2b419/" rel="noreferrer" target="_blank">LinkedIn <ArrowIcon /></a>
+            <a href="https://github.com/sonit-jangra/" rel="noreferrer" target="_blank">GitHub <ArrowIcon /></a>
+          </div>
+        </div>
+        <span aria-hidden="true" className="contact-decoration"><ShieldIcon /></span>
+      </section>
+
+      <footer className="site-footer section-wrap">
+        <a aria-label="Sonit, back to top" className="wordmark" href="#home">sonit<span>_</span></a>
+        <div aria-label="Social profiles" className="footer-socials">
+          <a href="https://linkedin.com/in/sonit-jangra-323a2b419/" rel="noreferrer" target="_blank">LINKEDIN ↗</a>
+          <a href="https://github.com/sonit-jangra/" rel="noreferrer" target="_blank">GITHUB ↗</a>
+          <a href="mailto:sonitsilk@gmail.com"> mail me = sonitsilk001@gmail.com</a>
+        </div>
+        <a className="back-to-top" href="#home">BACK TO TOP ↑</a>
+      </footer>
+    </main>
   );
 }

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Sonit Jangra | Cybersecurity Portfolio",
+  title: "Sonit — Cybersecurity Portfolio",
   description:
-    "Cybersecurity enthusiast portfolio of Sonit Jangra.",
+    "The cybersecurity learning portfolio of Sonit: hands-on security labs, responsible practice, and notes from the journey.",
 };
 
 export default function RootLayout({
